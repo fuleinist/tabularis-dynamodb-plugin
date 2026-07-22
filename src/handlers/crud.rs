@@ -80,7 +80,7 @@ pub async fn insert_record(id: Value, params: &Value) -> Value {
                 table,
                 cols.iter()
                     .zip(vals.iter())
-                    .map(|(c, v)| format!("\"{}\": {}", c, v))
+                    .map(|(c, v)| format!("'{}': {}", c, v))
                     .collect::<Vec<_>>()
                     .join(", ")
             )

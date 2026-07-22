@@ -106,12 +106,7 @@ pub async fn execute_query(id: Value, params: &Value) -> Value {
                             columns
                                 .iter()
                                 .map(|col| {
-                                    item.get(col)
-                                        .and_then(|v| {
-                                            v.as_object()
-                                                .and_then(|obj| obj.values().next().cloned())
-                                        })
-                                        .unwrap_or(Value::Null)
+                                    item.get(col).cloned().unwrap_or(Value::Null)
                                 })
                                 .collect()
                         })
@@ -154,12 +149,7 @@ pub async fn execute_query(id: Value, params: &Value) -> Value {
                             columns
                                 .iter()
                                 .map(|col| {
-                                    item.get(col)
-                                        .and_then(|v| {
-                                            v.as_object()
-                                                .and_then(|obj| obj.values().next().cloned())
-                                        })
-                                        .unwrap_or(Value::Null)
+                                    item.get(col).cloned().unwrap_or(Value::Null)
                                 })
                                 .collect()
                         })
