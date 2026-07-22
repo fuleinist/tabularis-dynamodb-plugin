@@ -1,0 +1,32 @@
+{
+  "id": "dynamodb",
+  "name": "DynamoDB",
+  "version": "0.1.0",
+  "description": "Tabularis driver plugin for AWS DynamoDB",
+  "default_port": 8000,
+  "executable": "tabularis-dynamodb-plugin",
+  "capabilities": {
+    "schemas": true,
+    "views": false,
+    "routines": false,
+    "file_based": false,
+    "connection_string": true,
+    "connection_uri": true,
+    "identifier_quote": "\"",
+    "alter_primary_key": false,
+    "readonly": false,
+    "manage_tables": true
+  },
+  "data_types": [
+    { "name": "STRING", "category": "string", "requires_length": false, "requires_precision": false },
+    { "name": "NUMBER", "category": "numeric", "requires_length": false, "requires_precision": false },
+    { "name": "BINARY", "category": "binary", "requires_length": false, "requires_precision": false },
+    { "name": "BOOLEAN", "category": "boolean", "requires_length": false, "requires_precision": false },
+    { "name": "STRING_SET", "category": "other", "requires_length": false, "requires_precision": false },
+    { "name": "NUMBER_SET", "category": "other", "requires_length": false, "requires_precision": false },
+    { "name": "BINARY_SET", "category": "other", "requires_length": false, "requires_precision": false },
+    { "name": "LIST", "category": "json", "requires_length": false, "requires_precision": false },
+    { "name": "MAP", "category": "json", "requires_length": false, "requires_precision": false },
+    { "name": "NULL", "category": "other", "requires_length": false, "requires_precision": false }
+  ]
+}
